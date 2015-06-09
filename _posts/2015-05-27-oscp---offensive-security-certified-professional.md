@@ -87,7 +87,7 @@ Since your final deliverable for obtaining the OSCP certification is a full-blow
 to submit a report for the labs but it may provide you with some additional points for your exam. I used KeepNote to keep detailed notes on every machine in the lab as well as on additional
 research, exercises, cheat sheets and the like:
 
-![KeepNote]({{ site.url }}/assets/keepnote1.png){: .img-responsive}
+![KeepNote](https://n3ko1.github.io/assets/keepnote1.png){: .img-responsive}
 
 As useful as KeepNote is to organize your thoughts and to keep track of your exploits, I strongly recommend to prepare and write your lab report (Word or OpenOffice) in parallel.
 I failed to finish my lab report in time because I couldn't quickly compile it from my notes. My note organization didn't match the recommended report structure and KeepNote gave me 
@@ -216,7 +216,7 @@ I started out on one of the seemingly easy challenges worth 10 points. And was c
 it took me until 3 AM on the next day to achieve the minimum score of 70 points. With immense relief and a mental state of complete lunacy I decided to quit. I slept soundly and wrote my report
 the next day in another 6 hour session (103 pages). On Tuesday I received the often-dreamed-about confirmation of certification:
 
-![OSCP]({{ site.url }}/assets/cert.png){: .img-responsive}
+![OSCP](https://n3ko1.github.io/assets/cert.png){: .img-responsive}
 
 I want to conclude this section with some lessons learned:
 
