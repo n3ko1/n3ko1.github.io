@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Stack 0x0"
+category: CTF 
+tags: [binary exploitation phoenix wargame ctf learning]
+---
+{% include JB/setup %}
+
 # Stack 0
 
 https://exploit.education/phoenix/stack-zero/
