@@ -11,12 +11,6 @@ tagline:
 	  <h4> {{ post.tagline }}</h4>
       {{ post.excerpt }}
 
-  {% unless post.tags == empty %}
-    <ul class="tag_box inline">
-      {% assign tags_list = post.tags %}
-      {% include JB/tags_list %}
-    </ul>
-  {% endunless %}
   <br>
 	  <a class="btn btn-default btn-xs" href="{{ post.url }}">more ...</a>
   {% endfor %}
