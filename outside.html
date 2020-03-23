@@ -1,8 +1,34 @@
 <html>
+  <head>
+    <style>
+    #footer{
+        text-align: center;
+        position: absolute; 
+        left: 0; 
+        right: 0; 
+        bottom: 0;
+    }
+    #main{
+        margin: 0 auto;
+        text-align: center;
+      color: #fff;
+        font-family:arial;
+        font-size:222px;
+    }
+    </style>
+  <body>
+  <script type="text/javascript">
+      var x = Math.floor(Math.random() * 256);
+      var y = Math.floor(Math.random() * 256);
+      var z = Math.floor(Math.random() * 256);
+      var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+      document.body.style.background = bgColor;
+    </script>
 <div id="main">
 <p>Nein</p>
 </div>
 <div id="footer">
 <a href="outside_privacy.html">Privacy / Datenschutzerklärung</a> 
 </div>
+  </body>
 </html>
