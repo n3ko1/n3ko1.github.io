@@ -1,0 +1,10 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+$base-font-size: 17px !default;
+
+.low-light {
+  color: lighten($text-color, 45%);
+}

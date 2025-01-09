@@ -5,10 +5,12 @@ url: https://www.lucas.bader.com # this is your site's root address.
 description: > # this means to ignore newlines until "show_excerpts:"
   All things CTF, hacking and large-scale C++ development.
 favicon: "./favicon.ico" # set the favicon of the site
-show_excerpts: false # set to true to show excerpts on the homepage
 
-# Moving date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+# Build settings
+remote_theme: huangyz0918/moving
+plugins:
+  - jekyll-feed
+
 moving:
   avatar_url: "https://avatars.githubusercontent.com/u/2579568?v=4"
   about_you: building things. # short description about you in about page
@@ -17,32 +19,6 @@ moving:
 
   # generate social links in about page.
   social_links:
-    # twitter:
     github: n3ko1
     rss: RSS
-    # dribbble:
-    # flickr:
-    # instagram:
     linkedin: lucas-bader-27247285
-    # pinterest:
-    # youtube:
-    # youtube_channel:
-    # youtube_channel_name:
-    # telegram:
-    # googleplus:
-    # microdotblog:
-    # reddit:
-
-    # Mastodon instances
-    # mastodon:
-    # - username:
-    #   instance:
-    # - username:
-    #   instance:
-
-# Build settings
-remote-theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
