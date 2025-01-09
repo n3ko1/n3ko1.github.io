@@ -44,5 +44,6 @@ moving:
 remote-theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
