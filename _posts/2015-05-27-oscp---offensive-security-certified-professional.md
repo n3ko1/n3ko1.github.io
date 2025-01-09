@@ -5,7 +5,6 @@ tagline: "Try harder you must!"
 category: certification
 tags: [oscp, pwk, certification, pentesting, offensive, security]
 ---
-{% include JB/setup %}
 
 I know there is already a whole truck load of OSCP reviews out there. But if you're anything like me, these
 won't be enough. You want more. You want to soak in everything you can before diving into the labs and come out as
