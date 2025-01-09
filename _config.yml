@@ -1,10 +1,9 @@
 title: Lucas Bader | n3ko1 # The title of the blog
 author: Lucas Bader # Your name
 email: lcs.bader@gmail.com # your email shown in the footer
-url: https://www.lucas.bader.com # this is your site's root address.
+url: https://www.lucas-bader.com # this is your site's root address.
 description: > # this means to ignore newlines until "show_excerpts:"
   All things CTF, hacking and large-scale C++ development.
-favicon: "./favicon.ico" # set the favicon of the site
 
 # Build settings
 remote_theme: huangyz0918/moving
