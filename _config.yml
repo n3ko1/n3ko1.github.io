@@ -3,7 +3,7 @@ author: Lucas Bader # Your name
 email: lcs.bader@gmail.com # your email shown in the footer
 url: https://www.lucas-bader.com # this is your site's root address.
 description: > # this means to ignore newlines until "show_excerpts:"
-  All things CTF, hacking and large-scale C++ development.
+  All things CTF, hacking and programming across the stack.
 
 # Build settings
 remote_theme: huangyz0918/moving
